@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Questbook</title>
+    <link rel="stylesheet" href="css/master.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  </head>
+  <body>
+    <h1>Questbook API</h1>
+    <h2>Below are all the available routes</h2>
+    <div class="container">
+      <table class="table table-striped table-dark" id="tbl">
+        <tr>
+          <th>Route</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td><a href="/message">/message</a></td>
+          <td>Send a message to the API</td>
+        </tr>
+        <tr>
+          <td><a href="/messageAjax">/messageAjax</a></td>
+          <td>Send a message to the API via ajax call</td>
+        </tr>
+        <tr>
+          <td><a href="/list">/list</a></td>
+          <td>Look up all the sent messages</td>
+        </tr>
+        <tr>
+          <td><a href="/api">/api</a></td>
+          <td>Raw JSON data</td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>
