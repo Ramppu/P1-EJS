@@ -2,7 +2,7 @@ const express = require('express');
 const fs = require('fs');
 const path = ('require');
 const app = express();
-const PORT = process.env.PORT || 5000;
+app.set('view engine','ejs');
 
 //module for handling form data
 var bp = require('body-parser')
@@ -12,22 +12,22 @@ app.use(bp.urlencoded({     // to support URL-encoded bodies
 }));
 
 //Css & json?
-app.use(express.static(__dirname + '/html'));
+app.use(express.static(__dirname + '/public'));
 
 //Routes
 app.get('/frontpage',function(req, res) {
-  res.sendFile(__dirname + '/html/index.html');
+  res.render('pages/index');
 });
 
 app.get('/list',function(req, res) {
-  res.sendFile(__dirname + '/html/guestbook.html');
+  res.render('pages/guestbook');
 });
 
 app.get('/message',function(req, res) {
-  res.sendFile(__dirname + '/html/addMessage.html');
+  res.render('pages/addMessage');
 });
 app.post('/message',function (req, res) {
-  var data = require('./json/messages.json');
+  var data = require('./public/json/messages.json');
   var dataa = {
     "Name": req.body.name,
     "Country": req.body.country,
@@ -36,7 +36,7 @@ app.post('/message',function (req, res) {
   };
   data.push(dataa);
   var write = JSON.stringify(data, null, 2);
-    fs.writeFile('./json/messages.json',write,finished);
+    fs.writeFileSync('./public/json/messages.json',write,finished);
     function finished(err) {
       console.log("All done!");
       res.redirect('/frontpage');
@@ -44,15 +44,15 @@ app.post('/message',function (req, res) {
 });
 
 app.get('/messageAjax',function(req, res) {
-  res.sendFile(__dirname + '/html/addMessageAjax.html');
+  res.render('pages/addMessageAjax');
 });
 
 app.get('/api',function(req, res) {
-  res.sendFile(__dirname + '/json/messages.json');
+  res.sendFile(__dirname + '/public/json/messages.json');
 });
 
 app.post('/api',function(req, res) {
-  var data = require('./json/messages.json');
+  var data = require('./public/json/messages.json');
   var date = new Date();
   var dataa = {
     "Name": req.body.Name,
@@ -62,7 +62,7 @@ app.post('/api',function(req, res) {
   };
   data.push(dataa);
   var write = JSON.stringify(data, null, 2);
-    fs.writeFile('./json/messages.json',write,finished);
+    fs.writeFileSync('./public/json/messages.json',write,finished);
     function finished(err) {
       console.log("All done!");
     }
@@ -73,5 +73,5 @@ app.get('*',function (req, res) {
        res.redirect('/frontpage');
 });
 
-app.listen(PORT);
+app.listen(8081);
 console.log("server open in http://localhost:8081/");

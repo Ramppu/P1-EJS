@@ -1,0 +1,54 @@
+body {
+    background: #485563; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #485563, #29323c); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #485563, #29323c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+h1 {
+    font-size: 5rem !important;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    color: cadetblue;
+}
+
+h2 {
+    font-size: 2rem !important;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    color: cadetblue;
+}
+#subtext {
+  border-top: 1px solid black;
+}
+
+form {
+    text-align: center;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+
+input,select {
+  width: 20%;
+  opacity: 0.5;
+  padding: 12px 20px;
+  margin: 1%;
+  margin-left: 5%;
+  display: block;
+  border: 1px solid grey;
+  border-radius: 25px;
+  box-sizing: border-box;
+  text-align: center;
+  color: #FFFFFF;
+  background-color: #191414;
+  display: inline;
+}
+
+.row {
+  display: block !important;
+}
+
+table, th, td {
+  text-align: center;
+  border: 1px solid black;
+}

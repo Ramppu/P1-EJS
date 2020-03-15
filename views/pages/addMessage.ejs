@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <%- include ('../partials/head'); %>
+  </head>
+  <body>
+    <div class="container" id="content">
+      <div class="row">
+        <h1>Add Message</h1>
+      </div>
+      <div class="row">
+        <form  method="post" action="/message" autocomplete="off">
+
+            <input type="text" name="name"  placeholder="Name" id="name">
+            <input type="text" name="message" placeholder="Message" id="message">
+            <input type="text" name="country" placeholder="Country" id="country">
+                  <input type="submit" value="Submit" onclick="sendData()">
+
+        </form>
+      <h1>This page includes the functionality of adding a message to the API</h1>
+        <a href="/messageAjax"><h2 id="subtext">Link to more sophisticated UI</h2>
+      </div>
+        <%- include ('../partials/webScripts'); %>
+    </div>
+  </body>
+</html>
