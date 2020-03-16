@@ -3,12 +3,26 @@
   <head>
       <%- include ('../partials/head'); %>
   </head>
-  <body onload="ajaxCall()">
   <div class="container">
     <h1>Questbook</h1>
+    <table class="table table-striped table-dark">
+      <tr>
+      <th>Name</th>
+        <th>Message</th>
+        <th>Country</th>
+        <th>Date</th>
+      </tr>
+        <% data.forEach(function(data){ %>
+            <tr>
+              <td><%= data.Name %></td>
+              <td><%= data.Message %></td>
+              <td><%= data.Country %></td>
+              <td><%= data.Date %></td>
+            </tr>
+        <% }) %>
+    </table>
     <%- include ('../partials/table'); %>
-    <%- include ('../partials/webScripts'); %>
   </div>
-
+    <%- include ('../partials/webScripts'); %>
   </body>
 </html>

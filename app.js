@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = ('require');
 const app = express();
 app.set('view engine','ejs');
-
+var jobj = require('./public/json/messages.json');
 //module for handling form data
 var bp = require('body-parser')
 app.use( bp.json() );       // to support JSON-encoded bodies
@@ -20,7 +20,7 @@ app.get('/frontpage',function(req, res) {
 });
 
 app.get('/list',function(req, res) {
-  res.render('pages/guestbook');
+  res.render('pages/guestbook',{data: jobj});
 });
 
 app.get('/message',function(req, res) {
