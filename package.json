@@ -27,8 +27,8 @@
   },
   "homepage": "https://github.com/Ramppu/P1#readme",
   "dependencies": {
-    "body-parser": "^1.19.0",
-    "ejs": "^3.0.1",
-    "express": "^4.17.1"
+    "body-parser": "^1.19.x",
+    "ejs": "^3.0.x",
+    "express": "^4.17.x"
   }
 }
