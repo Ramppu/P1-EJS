@@ -3,6 +3,8 @@ const fs = require('fs');
 const path = ('require');
 const app = express();
 app.set('view engine','ejs');
+const PORT = process.env.PORT || 5000;
+
 var jobj = require('./public/json/messages.json');
 //module for handling form data
 var bp = require('body-parser')
@@ -73,5 +75,5 @@ app.get('*',function (req, res) {
        res.redirect('/frontpage');
 });
 
-app.listen(8081);
+app.listen(PORT);
 console.log("server open in http://localhost:8081/");
